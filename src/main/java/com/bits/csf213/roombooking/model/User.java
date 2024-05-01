@@ -1,4 +1,4 @@
-package model;
+package com.bits.csf213.roombooking.model;
 
 import jakarta.persistence.*;
 
@@ -8,7 +8,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private Long userID;
 
     @Column(nullable = false, length = 100)
     private String name;
@@ -24,11 +24,11 @@ public class User {
 
     // Getters and Setters
     public Long getUserId() {
-        return userId;
+        return userID;
     }
 
     public void setUserId(Long userId) {
-        this.userId = userId;
+        this.userID = userId;
     }
 
     public String getEmail() {

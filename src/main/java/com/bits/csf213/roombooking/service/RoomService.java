@@ -1,6 +1,6 @@
-package service;
+package com.bits.csf213.roombooking.service;
 
-import model.Room;
+import com.bits.csf213.roombooking.model.Room;
 import java.util.List;
 
 public interface RoomService {
@@ -10,4 +10,7 @@ public interface RoomService {
     List<Room> findAllRooms();
     void deleteRoom(Long roomId);
     List<Room> findRoomsByCapacity(int capacity);
+    boolean checkRoomExistsbyName(String roomName);
+    boolean checkRoomExistsbyID(Long roomId);
+    boolean checkRoomWithSameNameExists(String roomName, Long roomId);
 }

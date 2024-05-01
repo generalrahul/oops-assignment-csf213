@@ -1,10 +1,11 @@
-package service;
+package com.bits.csf213.roombooking.service;
 
-import model.Room;
-import repository.RoomRepository;
+import com.bits.csf213.roombooking.model.Room;
+import com.bits.csf213.roombooking.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.time.LocalDateTime;
 
 @Service
 public class RoomServiceImpl implements RoomService {
@@ -41,4 +42,22 @@ public class RoomServiceImpl implements RoomService {
     public List<Room> findRoomsByCapacity(int capacity) {
         return roomRepository.findByCapacityGreaterThanEqual(capacity);
     }
+
+    @Override
+    public boolean checkRoomExistsbyName(String roomName) {
+        return roomRepository.existsByRoomName(roomName);
+    }
+
+    @Override
+    // Method to check if a room with a given ID already exists
+    public boolean checkRoomExistsbyID(Long roomId) {
+        return roomRepository.existsByRoomId(roomId);
+    }
+
+    @Override
+    // Method to check if a room with a given name already exists excluding the given room ID
+    public boolean checkRoomWithSameNameExists(String roomName, Long roomId) {
+        return roomRepository.existsByRoomNameAndRoomIdNot(roomName, roomId);
+    }
+
 }

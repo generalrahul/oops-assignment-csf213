@@ -1,4 +1,4 @@
-package model;
+package com.bits.csf213.roombooking.model;
 
 import jakarta.persistence.*;
 
@@ -14,7 +14,7 @@ public class Room {
     private String roomName;
 
     @Column(nullable = false)
-    private int capacity;
+    private Long capacity;
 
     // Constructors
     public Room() {}
@@ -38,11 +38,11 @@ public class Room {
     }
 
     // Getter and setter for capacity
-    public int getCapacity() {
+    public Long getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
+    public void setCapacity(Long capacity) {
         this.capacity = capacity;
     }
 

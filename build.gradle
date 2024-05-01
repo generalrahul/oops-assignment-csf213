@@ -23,6 +23,14 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+jar {
+	duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+}
+
+bootJar {
+	duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
 }

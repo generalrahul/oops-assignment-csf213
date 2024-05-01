@@ -1,4 +1,4 @@
-package util;
+package com.bits.csf213.roombooking.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
